@@ -9,11 +9,17 @@ import "semantic-ui-css/semantic.min.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 import rootReducer from "./rootReducer";
+import { userLoggedIn } from "./actions/auth";
 
 const store = createStore(
   rootReducer,
   composeWithDevTools(applyMiddleware(thunk))
 );
+
+if (localStorage.booksy) {
+  const user = { token: localStorage.booksy };
+  store.dispatch(userLoggedIn(user));
+}
 
 ReactDOM.render(
   <React.StrictMode>
