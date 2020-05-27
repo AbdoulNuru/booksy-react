@@ -5,7 +5,7 @@ import Homepage from "./components/pages/HomePage";
 import LoginPage from "./components/pages/LoginPage";
 import DashoardPage from "./components/pages/DashboardPage";
 import SignupPage from "./components/pages/SignupPage";
-import Chat from "./components/pages/chat";
+// import Chat from "./components/pages/chat";
 import UserRoute from "./components/routes/UserRoute";
 import GuestRoute from "./components/routes/GuestRoute";
 
@@ -19,7 +19,7 @@ const App = ({ location }) => (
       exact
       component={SignupPage}
     />
-    <GuestRoute location={location} path="/chat" exact component={Chat} />
+    {/* <GuestRoute location={location} path="/chat" exact component={Chat} /> */}
     <UserRoute
       location={location}
       path="/dashboard"
